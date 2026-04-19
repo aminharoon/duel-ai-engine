@@ -16,7 +16,7 @@ export const mistralModel = new ChatMistralAI({
 });
 
 /**cohere ai model  */
-export const llm = new ChatCohere({
+export const cohereModel = new ChatCohere({
   model: "command-a-03-2025",
   temperature: 0,
   maxRetries: 2,
