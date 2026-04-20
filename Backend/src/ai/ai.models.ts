@@ -12,6 +12,6 @@ export const mistralModel = new ChatMistralAI({
   apiKey: config.MISTRAL_API,
 });
 export const cohereModel = new ChatCohere({
-  model: "cohere-command-a-03-2025",
-  apiKey: config.CHORE_API,
+  model: "command-a-03-2025",
+  apiKey: config.COHERE_API,
 });

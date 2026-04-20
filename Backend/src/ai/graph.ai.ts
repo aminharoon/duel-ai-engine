@@ -47,7 +47,7 @@ const judgeNode: GraphNode<typeof state> = async (state) => {
     responseFormat: providerStrategy(
       z.object({
         solution_1_score: z.number().min(0).max(10),
-        solution_2_score: z.number().min(0).max(0),
+        solution_2_score: z.number().min(0).max(10),
         solution_1_feedBack: z.string().default(""),
         solution_2_feedBack: z.string().default(""),
       }),
@@ -85,10 +85,17 @@ const judgeNode: GraphNode<typeof state> = async (state) => {
 /**
  * creating the graph by adding the nodes and edges between them and compile it to make it ready for execution
  */
-export const graph = new StateGraph(state)
+const graph = new StateGraph(state)
   .addNode("solution", solutionNode)
-  .addNode("judge", judgeNode)
+  .addNode("judge_node", judgeNode)
   .addEdge(START, "solution")
-  .addEdge("solution", "judge")
-  .addEdge("judge", END)
+  .addEdge("solution", "judge_node")
+  .addEdge("judge_node", END)
   .compile();
+
+export const useGraph = async (problem: string) => {
+  const result = graph.invoke({
+    problem: problem,
+  });
+  return result;
+};
