@@ -53,7 +53,7 @@ const solutionNode: GraphNode<typeof State> = async (state: typeof State) => {
 };
 
 const judgeNode: GraphNode<typeof State> = async (state: typeof State) => {
-  const { solution_1, solution_2 } = State;
+  const { solution_1, solution_2 } = state;
 
   const judge = createAgent({
     model: geminiModel,
@@ -82,7 +82,7 @@ const graph = new StateGraph(State)
   .addNode("solution", solutionNode)
   .addNode("judge", judgeNode)
   .addEdge(START, "solution")
-  .addNode("solution", "judge")
+  .addEdge("solution", "judge")
   .addEdge("judge", END)
   .compile();
 
