@@ -5,10 +5,12 @@ export const useChat = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
 
+    setError(null);
     const userMessage = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
@@ -29,9 +31,9 @@ export const useChat = () => {
       };
 
       setMessages((prev) => [...prev, aiMessage]);
-    } catch (error) {
-      console.error("Error fetching AI solutions:", error);
-      // Handle error state if needed
+    } catch (err) {
+      console.error("Error fetching AI solutions:", err);
+      setError(err.message || "Failed to connect to the arena. Is the server running?");
     } finally {
       setIsLoading(false);
     }
@@ -42,6 +44,8 @@ export const useChat = () => {
     input,
     setInput,
     isLoading,
+    error,
+    setError,
     sendMessage,
   };
 };
