@@ -18,7 +18,7 @@ export const useChat = () => {
 
     try {
       const results = await chatService.getBattleResults(input);
-      console.log("Result is ", results)
+
       const aiMessage = {
         role: "battle_result",
         solution1: results.solution_1,
@@ -32,7 +32,7 @@ export const useChat = () => {
 
       setMessages((prev) => [...prev, aiMessage]);
     } catch (err) {
-      console.error("Error fetching AI solutions:", err);
+
       setError(err.message || "Failed to connect to the arena. Is the server running?");
     } finally {
       setIsLoading(false);

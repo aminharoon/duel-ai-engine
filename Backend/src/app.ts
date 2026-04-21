@@ -14,7 +14,7 @@ app.use(
     credentials: true,
   }),
 );
-app.post("/", async (req, res) => {
+app.post("/get-battle-results", async (req, res) => {
   const problem = req.body.problem;
   const result = await useGraph(problem);
   res.status(200).json(result);
