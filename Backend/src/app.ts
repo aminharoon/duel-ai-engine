@@ -15,7 +15,12 @@ app.use(
   }),
 );
 app.post("/get-battle-results", async (req, res) => {
-  const problem = req.body.problem;
+  const problem = req.body?.problem;
+  if (!problem) {
+    return res
+      .status(400)
+      .json({ error: "Problem is required in the request body" });
+  }
   const result = await useGraph(problem);
   res.status(200).json(result);
 });

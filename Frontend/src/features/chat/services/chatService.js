@@ -7,12 +7,13 @@ const api = axios.create({
 
 export const chatService = {
   getBattleResults: async (problem) => {
-    // Simulate API delay
+
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    // Mock data based on the problem
     try {
+
       const response = await api.post("/get-battle-results", { problem });
+
       return response.data;
     } catch (e) {
       console.error(`Backend API error: ${e.message}`);
