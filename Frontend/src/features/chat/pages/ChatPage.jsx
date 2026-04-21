@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useChat } from "../hooks/useChat";
+import ReactMarkdown from "react-markdown";
 
 const SkeletonCard = () => (
   <div className="bg-slate-900/50 border border-slate-800 p-5 rounded-2xl animate-pulse">
@@ -193,8 +194,8 @@ const ChatPage = () => {
                         Distributed
                       </div>
                     </div>
-                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-wrap">
-                      {msg.solution1}
+                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-wrap prose max-w-none overflow-auto">
+                      <ReactMarkdown>{msg.solution1}</ReactMarkdown>
                     </p>
                   </div>
 
@@ -211,8 +212,8 @@ const ChatPage = () => {
                         Modular
                       </div>
                     </div>
-                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-wrap">
-                      {msg.solution2}
+                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-wrap prose max-w-none overflow-auto">
+                      <ReactMarkdown>{msg.solution2}</ReactMarkdown>
                     </p>
                   </div>
                 </div>
