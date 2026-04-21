@@ -36,7 +36,8 @@ const SkeletonVerdict = () => (
 );
 
 const ChatPage = () => {
-  const { messages, input, setInput, isLoading, error, setError, sendMessage } = useChat();
+  const { messages, input, setInput, isLoading, error, setError, sendMessage } =
+    useChat();
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -60,14 +61,37 @@ const ChatPage = () => {
       {error && (
         <div className="bg-red-500/20 border-b border-red-500/50 px-6 py-3 flex items-center justify-between animate-in slide-in-from-top duration-300">
           <div className="flex items-center gap-3">
-            <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg
+              className="w-5 h-5 text-red-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
             </svg>
             <span className="text-sm font-medium text-red-200">{error}</span>
           </div>
-          <button onClick={() => setError(null)} className="text-red-400 hover:text-red-300 transition-colors">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          <button
+            onClick={() => setError(null)}
+            className="text-red-400 hover:text-red-300 transition-colors"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
@@ -78,8 +102,18 @@ const ChatPage = () => {
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
               </svg>
             </div>
             <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
@@ -88,7 +122,9 @@ const ChatPage = () => {
           </div>
           <div className="hidden md:flex items-center gap-2">
             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-            <span className="text-xs font-medium text-slate-400 tracking-wider uppercase">Live Engine Active</span>
+            <span className="text-xs font-medium text-slate-400 tracking-wider uppercase">
+              Live Engine Active
+            </span>
           </div>
         </div>
       </header>
@@ -100,24 +136,44 @@ const ChatPage = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full"></div>
               <div className="relative w-20 h-20 bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center">
-                <svg className="w-10 h-10 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                <svg
+                  className="w-10 h-10 text-slate-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
                 </svg>
               </div>
             </div>
             <div className="text-center space-y-2">
-              <p className="text-xl font-semibold text-slate-300">Summon the Contenders</p>
-              <p className="text-slate-500 max-w-xs">Describe a complex problem and watch two AI models battle for the superior implementation.</p>
+              <p className="text-xl font-semibold text-slate-300">
+                Summon the Contenders
+              </p>
+              <p className="text-slate-500 max-w-xs">
+                Describe a complex problem and watch two AI models battle for
+                the superior implementation.
+              </p>
             </div>
           </div>
         )}
 
         {messages.map((msg, index) => (
-          <div key={index} className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <div
+            key={index}
+            className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
+          >
             {msg.role === "user" ? (
               <div className="flex justify-end">
                 <div className="bg-blue-600/10 border border-blue-500/30 text-blue-100 px-5 py-4 rounded-2xl rounded-tr-none max-w-[80%] shadow-lg shadow-blue-500/5">
-                  <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-2">Challenge Submission</p>
+                  <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-2">
+                    Challenge Submission
+                  </p>
                   <p className="text-base leading-relaxed">{msg.content}</p>
                 </div>
               </div>
@@ -128,24 +184,36 @@ const ChatPage = () => {
                   <div className="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl hover:border-purple-500/50 transition-all duration-300 group">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-purple-500/10 border border-purple-500/30 rounded-lg flex items-center justify-center text-purple-400 font-bold">1</div>
+                        <div className="w-8 h-8 bg-purple-500/10 border border-purple-500/30 rounded-lg flex items-center justify-center text-purple-400 font-bold">
+                          1
+                        </div>
                         <h3 className="font-bold text-slate-200">AI Alpha</h3>
                       </div>
-                      <div className="px-2 py-1 bg-purple-500/20 text-purple-400 rounded text-[10px] font-bold uppercase tracking-tighter">Distributed</div>
+                      <div className="px-2 py-1 bg-purple-500/20 text-purple-400 rounded text-[10px] font-bold uppercase tracking-tighter">
+                        Distributed
+                      </div>
                     </div>
-                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-wrap">{msg.solution1}</p>
+                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-wrap">
+                      {msg.solution1}
+                    </p>
                   </div>
 
                   {/* AI Solution 2 */}
                   <div className="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/50 transition-all duration-300 group">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-emerald-500/10 border border-emerald-500/30 rounded-lg flex items-center justify-center text-emerald-400 font-bold">2</div>
+                        <div className="w-8 h-8 bg-emerald-500/10 border border-emerald-500/30 rounded-lg flex items-center justify-center text-emerald-400 font-bold">
+                          2
+                        </div>
                         <h3 className="font-bold text-slate-200">AI Beta</h3>
                       </div>
-                      <div className="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded text-[10px] font-bold uppercase tracking-tighter">Modular</div>
+                      <div className="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded text-[10px] font-bold uppercase tracking-tighter">
+                        Modular
+                      </div>
                     </div>
-                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-wrap">{msg.solution2}</p>
+                    <p className="text-slate-400 text-sm leading-relaxed whitespace-pre-wrap">
+                      {msg.solution2}
+                    </p>
                   </div>
                 </div>
 
@@ -155,13 +223,25 @@ const ChatPage = () => {
                   <div className="relative bg-slate-900/60 border border-amber-500/20 p-6 rounded-3xl space-y-6">
                     <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
                       <div className="w-10 h-10 bg-amber-500/10 rounded-full flex items-center justify-center shadow-inner">
-                        <svg className="w-6 h-6 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05l-3.294 3.293a1 1 0 01-1.414 0l-3.294-3.293a1 1 0 01-.285-1.05l1.738-5.42-1.233-.616a1 1 0 01.894-1.79l1.599.8L9 4.323V3a1 1 0 011-1zm0 13.06l1.646 1.647 1.647-1.647L10 11.754l-3.293 3.306 1.647 1.647L10 15.06z" clipRule="evenodd" />
+                        <svg
+                          className="w-6 h-6 text-amber-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05l-3.294 3.293a1 1 0 01-1.414 0l-3.294-3.293a1 1 0 01-.285-1.05l1.738-5.42-1.233-.616a1 1 0 01.894-1.79l1.599.8L9 4.323V3a1 1 0 011-1zm0 13.06l1.646 1.647 1.647-1.647L10 11.754l-3.293 3.306 1.647 1.647L10 15.06z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <h3 className="font-black text-amber-500 uppercase tracking-tighter text-lg">Judge Evaluation</h3>
-                        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em]">Cross-Model Capability Report</p>
+                        <h3 className="font-black text-amber-500 uppercase tracking-tighter text-lg">
+                          Judge Evaluation
+                        </h3>
+                        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em]">
+                          Cross-Model Capability Report
+                        </p>
                       </div>
                     </div>
 
@@ -169,28 +249,48 @@ const ChatPage = () => {
                       {/* Alpha Scoring */}
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Alpha Efficiency</span>
-                          <span className="text-lg font-black text-purple-400">{msg.solution1Score}/10</span>
+                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                            Alpha Efficiency
+                          </span>
+                          <span className="text-lg font-black text-purple-400">
+                            {msg.solution1Score}/10
+                          </span>
                         </div>
                         <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
-                          <div className="h-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" style={{ width: `${msg.solution1Score * 10}%` }}></div>
+                          <div
+                            className="h-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+                            style={{ width: `${msg.solution1Score * 10}%` }}
+                          ></div>
                         </div>
                         <p className="text-xs text-slate-500 italic leading-relaxed">
-                          <span className="text-purple-400 font-bold not-italic">Feedback:</span> {msg.solution1Feedback}
+                          <span className="text-purple-400 font-bold not-italic">
+                            Feedback:
+                          </span>{" "}
+                          {msg.solution1Feedback}
                         </p>
                       </div>
 
                       {/* Beta Scoring */}
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Beta Precision</span>
-                          <span className="text-lg font-black text-emerald-400">{msg.solution2Score}/10</span>
+                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                            Beta Precision
+                          </span>
+                          <span className="text-lg font-black text-emerald-400">
+                            {msg.solution2Score}/10
+                          </span>
                         </div>
                         <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
-                          <div className="h-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" style={{ width: `${msg.solution2Score * 10}%` }}></div>
+                          <div
+                            className="h-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+                            style={{ width: `${msg.solution2Score * 10}%` }}
+                          ></div>
                         </div>
                         <p className="text-xs text-slate-500 italic leading-relaxed">
-                          <span className="text-emerald-400 font-bold not-italic">Feedback:</span> {msg.solution2Feedback}
+                          <span className="text-emerald-400 font-bold not-italic">
+                            Feedback:
+                          </span>{" "}
+                          {msg.solution2Feedback}
                         </p>
                       </div>
                     </div>
@@ -246,9 +346,21 @@ const ChatPage = () => {
               </div>
             ) : (
               <>
-                <span className="uppercase tracking-widest text-xs">Execute</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                <span className="uppercase tracking-widest text-xs">
+                  Execute
+                </span>
+                <svg
+                  className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                  />
                 </svg>
               </>
             )}
