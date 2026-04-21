@@ -20,6 +20,7 @@ const state = new StateSchema({
     solution_2_score: z.number().default(0),
     solution_1_feedBack: z.string().default(""),
     solution_2_feedBack: z.string().default(""),
+    recommendation: z.string().default(""),
   }),
 });
 
@@ -50,6 +51,7 @@ const judgeNode: GraphNode<typeof state> = async (state) => {
         solution_2_score: z.number().min(0).max(10),
         solution_1_feedBack: z.string().default(""),
         solution_2_feedBack: z.string().default(""),
+        recommendation: z.string().default(""),
       }),
     ),
     systemPrompt: `You are a judge for a coding competition. You will be given a problem statement and two solutions. You need to evaluate the solutions based on their correctness, efficiency, and clarity. You will provide a score out of 10 for each solution and feedback explaining the scores.`,
@@ -70,6 +72,7 @@ const judgeNode: GraphNode<typeof state> = async (state) => {
     solution_2_score,
     solution_1_feedBack,
     solution_2_feedBack,
+    recommendation,
   } = judgeResponse.structuredResponse;
 
   return {
@@ -78,6 +81,7 @@ const judgeNode: GraphNode<typeof state> = async (state) => {
       solution_2_score,
       solution_1_feedBack,
       solution_2_feedBack,
+      recommendation,
     },
   };
 };

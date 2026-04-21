@@ -4,9 +4,10 @@ import { ChatMistralAI } from "@langchain/mistralai";
 import { config } from "../config/config.js";
 
 export const googleModel = new ChatGoogle({
-  model: "gemini-flash-latest",
+  model: "gemini-2.5-flash",
   apiKey: config.GOOGLE_API,
 });
+
 export const mistralModel = new ChatMistralAI({
   model: "mistral-medium-latest",
   apiKey: config.MISTRAL_API,
